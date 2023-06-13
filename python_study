@@ -1,0 +1,126 @@
+Write a Python Program to Find the Factorial of a Number?
+Ans:-
+here we have written below function to calculate factorial of any integer.
+def factorial(number):
+    if number ==0 or number == 1:
+        return 1
+    else:
+        return number*factorial(number-1)
+    
+num=int(input("enter a positive integer"))
+
+if num <0:
+    print("Factorial is not defiend for negative numbers")
+    
+elif num == 0:
+    print("the factorial of 0 is 1")
+    
+else:
+    result=factorial(num)
+    print(f"the factorial of {num} is {result}")
+
+Q.2 Write a Python Program to Display the multiplication Table?
+Ans:-
+Here we have written the function multiplicatio_table for multiply the number to 1 to 10 and make a multiplication table.
+def multiplication_table(num):
+    print(f"multiplication table for {num}")
+    for i in range (1,11):
+        product = num*i
+        print(f"{num}*{i}={product}")
+        
+num=int(input("enter interger number"))
+multiplication_table(num)
+#by giving input to this we can call for any number of multiplication table.
+
+Q.3 Write a Python Program to Print the Fibonacci sequence?
+Ans:-
+Here we have written function for fabonacci sequence as below;_
+def fibonacci_sequence(n):
+    sequence = []
+    if n <= 0:
+        return sequence
+    elif n == 1:
+        sequence.append(0)
+        return sequence
+    else:
+        sequence = [0, 1]
+        while len(sequence) < n:
+            next_number = sequence[-1] + sequence[-2]
+            sequence.append(next_number)
+        return sequence
+
+# Prompt the user to enter the number of terms
+num_terms = int(input("Enter the number of terms for the Fibonacci sequence: "))
+
+# Generate and print the Fibonacci sequence
+fib_sequence = fibonacci_sequence(num_terms)
+print("Fibonacci sequence:")
+for num in fib_sequence:
+    print(num, end=" ")
+
+Q4. Write a Python Program to Check Armstrong Number?
+Ans:-
+Here we have written below function to check weather given numbber is armstrong or not.
+
+def is_armstrong_number(num):
+    order=len(str(num))
+    sum=0
+    temp=num
+    while temp >0:
+        digit=temp%10
+        sum+=digit**order
+        temp//=10
+    if num == sum:
+        return True
+    else:
+        return False
+
+num=int(input("Given Number is: "))
+result=is_armstrong_number(num)
+if result ==True:
+    print(f"{num} is a armstrong number")
+else:
+    print(f"{num} is not a armstrong number")
+
+#after giving a number this function will return that the given number is armstrong number or not.
+
+Q  Write a Python Program to Find Armstrong Number in an Interval?
+Ans:-
+Here we have written function to check the armstrong number between a interval decided by user.
+def is_armstrong_number(num):
+    order=len(str(num))
+    sum=0
+    temp=num
+    while temp>0:
+        digit=temp%10
+        sum+=digit**order
+        temp//=10
+    if num==sum:
+        return True
+    else:
+        return False
+    
+starts=int(input("enter you start number"))
+end=int(input("enter you ens number"))
+print(f"artstrong from between {starts} to {end} are")
+
+for num in range(starts,end+1):
+    if is_armstrong_number(num):
+        print(num)
+
+
+Q Write a Python Program to Find the Sum of Natural Numbers?
+Ans:-
+Here we have written function to calculate the sum of natural number upto given limit .
+
+def sum_of_natural_numbers(n):
+    sum=0
+    for i in range(1,n+1):
+        sum += i
+    return sum
+limit=int(input("enter limit for natural numbers"))
+
+summ=sum_of_natural_numbers(limit)
+print(f"sum of the natural numbers upto {limit} is {summ}")
+
+# here after running the function will ask for the limit of natural numbers till that number function will collect all natural numbers and produce sum of all that numbers.
